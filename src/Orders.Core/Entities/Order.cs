@@ -7,7 +7,7 @@ namespace Orders.Core.Entities
     public class Order : Entity, IAggregateRoot
     {
         public Order(Guid customerId, decimal totalPrice,
-                     List<OrderItem> orderItems, Guid? voucherId = null,
+                     List<OrderItem> orderItems,
                      bool voucherIsUsed = false, decimal discount = 0)
         {
             Code = Guid.NewGuid().ToString()[..8];
@@ -16,7 +16,6 @@ namespace Orders.Core.Entities
             _items = orderItems;
             Discount = discount;
             VoucherIsUsed = voucherIsUsed;
-            VoucherId = voucherId;
             CreatedAt = DateTime.Now;
             OrderStatus = EOrderStatus.WaitingPyment;
         }

@@ -11,5 +11,7 @@ namespace Orders.Infrastructure.Persistence.Repositories
 
         public async Task<Voucher?> GetVoucherByCodeAsync(string code) => 
             await _context.Vouchers.AsNoTracking().FirstOrDefaultAsync(x => x.Code == code);
+
+        public void Update(Voucher voucher) => _context.Vouchers.Update(voucher);
     }
 }

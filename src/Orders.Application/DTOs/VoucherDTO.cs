@@ -1,4 +1,5 @@
 ﻿namespace Orders.Application.DTOs
 {
-    public record VoucherDTO(string code, decimal? percentual, decimal? discountValue, int discountType);
+    public record VoucherDTO(string Code, decimal? Percentual,
+                             decimal? DiscountValue, int DiscountType);
 }

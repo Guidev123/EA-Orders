@@ -11,6 +11,9 @@ namespace Orders.Infrastructure.Persistence
                : DbContext(options), IUnitOfWork
     {
         private readonly IMediatorHandler _mediatorHandler = mediatorHandler;
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,11 +24,12 @@ namespace Orders.Infrastructure.Persistence
                 .SelectMany(e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(160)");
 
-            foreach (var property in modelBuilder.Model.GetEntityTypes()
-                .SelectMany(e => e.GetForeignKeys())) property.DeleteBehavior = DeleteBehavior.ClientSetNull;
-
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrderDbContext).Assembly);
+
+            foreach (var rel in modelBuilder.Model.GetEntityTypes().SelectMany(x => x.GetForeignKeys()))
+                rel.DeleteBehavior = DeleteBehavior.ClientSetNull;
         }
+
         public async Task<bool> CommitAsync()
         {
             var success = await SaveChangesAsync() > 0;

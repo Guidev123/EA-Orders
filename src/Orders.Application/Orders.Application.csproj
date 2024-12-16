@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\CommonLib\src\EA.CommonLib\EA.CommonLib.csproj" />
     <ProjectReference Include="..\Orders.Core\Orders.Core.csproj" />
   </ItemGroup>

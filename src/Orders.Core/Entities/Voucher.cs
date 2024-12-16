@@ -19,8 +19,9 @@ namespace Orders.Core.Entities
             CreatedAt = DateTime.Now;
             IsUsed = false;
         }
+        protected Voucher() { }
 
-        public string Code { get; private set; }
+        public string Code { get; private set; } = string.Empty;
         public decimal? Percentual { get; private set; }
         public decimal? DiscountValue { get; private set; }
         public int? Quantity { get; private set; }
@@ -42,6 +43,15 @@ namespace Orders.Core.Entities
             IsActive = false;
             IsUsed = true;
             Quantity = 0;
+            UsedAt = DateTime.Now;
+        }
+
+        public void DebitQuantity()
+        {
+            Quantity -= 1;
+            if (Quantity >= 1) return;
+
+            SetAsUsed();
         }
 
         public void SetExpirationDate(DateTime expirationDate) => ExpiresAt = expirationDate;

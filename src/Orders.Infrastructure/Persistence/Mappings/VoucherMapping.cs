@@ -12,7 +12,8 @@ namespace Orders.Infrastructure.Persistence.Mappings
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Code).IsRequired().HasColumnType("VARCHAR(100)");
-            builder.Property(x => x.DiscountValue).IsRequired(false).HasColumnType("MONEY");
+            builder.Property(x => x.DiscountValue).IsRequired(false);
+            builder.Property(x => x.Percentual).IsRequired(false);
         }
     }
 }
