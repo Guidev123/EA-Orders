@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Orders.API.Controllers
 {
-    [Route("api/orders/v1")]
+    [Route("api/orders")]
     public class OrdersController : MainController
     {
 

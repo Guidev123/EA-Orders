@@ -1,5 +1,6 @@
 ﻿using EA.CommonLib.DomainObjects;
 using Orders.Core.Enums;
+using Orders.Core.Specs;
 
 namespace Orders.Core.Entities
 {
@@ -7,20 +8,16 @@ namespace Orders.Core.Entities
     {
         public Voucher(string code, decimal? percentual,
                        decimal? discountValue, int? quantity,
-                       EDiscountType discountType, DateTime createdAt,
-                       DateTime usedAt, DateTime expiresAt,
-                       bool isActive, bool isUsed)
+                       EDiscountType? discountType)
         {
             Code = code;
             Percentual = percentual;
             DiscountValue = discountValue;
             Quantity = quantity;
-            DiscountType = discountType;
-            CreatedAt = createdAt;
-            UsedAt = usedAt;
-            ExpiresAt = expiresAt;
-            IsActive = isActive;
-            IsUsed = isUsed;
+            DiscountType = discountType ?? EDiscountType.Value;
+            IsActive = true;
+            CreatedAt = DateTime.Now;
+            IsUsed = false;
         }
 
         public string Code { get; private set; }
@@ -33,5 +30,20 @@ namespace Orders.Core.Entities
         public DateTime ExpiresAt { get; private set; }
         public bool IsActive { get; private set; }
         public bool IsUsed { get; private set; }
+
+        public bool IsValidToUse() =>
+             new VoucherActiveSpecification()
+                .And(new VoucherDateSpecification())
+                .And(new VoucherQuantitySpecification()).IsSatisfiedBy(this);
+
+
+        public void SetAsUsed()
+        {
+            IsActive = false;
+            IsUsed = true;
+            Quantity = 0;
+        }
+
+        public void SetExpirationDate(DateTime expirationDate) => ExpiresAt = expirationDate;
     }
 }

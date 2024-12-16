@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{F7909C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EA.CommonLib", "..\CommonLib\src\EA.CommonLib\EA.CommonLib.csproj", "{98DC32E1-62B8-41CD-BC35-36823293B671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Application", "src\Orders.Application\Orders.Application.csproj", "{F668295B-5FBD-4341-9350-A9828AD327A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{98DC32E1-62B8-41CD-BC35-36823293B671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98DC32E1-62B8-41CD-BC35-36823293B671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98DC32E1-62B8-41CD-BC35-36823293B671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F668295B-5FBD-4341-9350-A9828AD327A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F668295B-5FBD-4341-9350-A9828AD327A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F668295B-5FBD-4341-9350-A9828AD327A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F668295B-5FBD-4341-9350-A9828AD327A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{B5E2D371-8BD5-46D1-A701-0F335D2417BD} = {2EEE3704-F93D-480A-BF55-947B4AD0E4C5}
 		{F7909C3F-0C6D-44F8-9195-99F764F0D6C8} = {2EEE3704-F93D-480A-BF55-947B4AD0E4C5}
 		{98DC32E1-62B8-41CD-BC35-36823293B671} = {F7909C3F-0C6D-44F8-9195-99F764F0D6C8}
+		{F668295B-5FBD-4341-9350-A9828AD327A8} = {B5E2D371-8BD5-46D1-A701-0F335D2417BD}
 	EndGlobalSection
 EndGlobal
