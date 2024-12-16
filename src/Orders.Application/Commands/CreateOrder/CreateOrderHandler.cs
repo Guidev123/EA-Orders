@@ -20,22 +20,22 @@ namespace Orders.Application.Commands.CreateOrder
         public async Task<Response<CreateOrderCommand>> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
         {
             if (!command.IsValid())
-                return new(null, 400, "Error", GetAllErrors(command.ValidationResult!));
+                return new(null, 400, "Error", GetAllErrors(command.ValidationResult));
 
             var order = command.MapToEntity();
 
             if (!await ApplyVoucherAsync(command, order))
-                return new(null, 400, "Error", GetAllErrors(command.ValidationResult!));
+                return new(null, 400, "Error", GetAllErrors(command.ValidationResult));
 
             if (!ValidateOrder(order))
             {
-                AddError(command.ValidationResult!, "The order price is not correct");
-                return new(null, 400, "Error", GetAllErrors(command.ValidationResult!));
+                AddError(command.ValidationResult, "The order price is not correct");
+                return new(null, 400, "Error", GetAllErrors(command.ValidationResult));
             }
 
             // TODO
             if (!ProcessPayment(order))
-                return new(null, 400, "Error", GetAllErrors(command.ValidationResult!));
+                return new(null, 400, "Error", GetAllErrors(command.ValidationResult));
 
             order.AuthorizeOrder();
 
@@ -55,14 +55,14 @@ namespace Orders.Application.Commands.CreateOrder
             var voucher = await _voucherRepository.GetVoucherByCodeAsync(command.VoucherCode);
             if(voucher is null)
             {
-                AddError(command.ValidationResult!, "Voucher not found");
+                AddError(command.ValidationResult, "Voucher not found");
                 return false;
             }
 
             var voucherValidation = new VoucherValidator().Validate(voucher);
             if (!voucherValidation.IsValid)
             {
-                voucherValidation.Errors.ToList().ForEach(m =>  AddError(command.ValidationResult!, m.ErrorMessage));
+                voucherValidation.Errors.ToList().ForEach(m =>  AddError(command.ValidationResult, m.ErrorMessage));
                 return false;
             }
 

@@ -25,6 +25,5 @@ namespace Orders.Infrastructure.Persistence.Repositories
 
         public async Task<OrderItem?> GetItemByOrder(Guid orderId, Guid productId) =>
             await _context.OrderItems.AsNoTracking().FirstOrDefaultAsync(x => x.OrderId == orderId && x.ProductId == productId);
-
     }
 }
