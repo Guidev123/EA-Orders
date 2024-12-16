@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CommonLib\src\EA.CommonLib\EA.CommonLib.csproj" />
+  </ItemGroup>
+
 </Project>

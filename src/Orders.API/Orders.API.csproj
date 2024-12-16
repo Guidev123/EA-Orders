@@ -16,4 +16,8 @@
     <Folder Include="Application\Queries\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CommonLib\src\EA.CommonLib\EA.CommonLib.csproj" />
+  </ItemGroup>
+
 </Project>
