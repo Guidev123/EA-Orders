@@ -1,6 +1,7 @@
 ﻿using EA.CommonLib.Mediator;
 using EA.CommonLib.Messages;
 using Microsoft.EntityFrameworkCore;
+using Orders.Core.Entities;
 using Orders.Core.Repositories;
 using Orders.Infrastructure.Persistence.Extensions;
 
@@ -10,6 +11,7 @@ namespace Orders.Infrastructure.Persistence
                : DbContext(options), IUnitOfWork
     {
         private readonly IMediatorHandler _mediatorHandler = mediatorHandler;
+        public DbSet<Voucher> Vouchers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

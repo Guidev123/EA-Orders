@@ -1,4 +1,6 @@
-﻿using Orders.Core.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using Orders.Core.Entities;
+using Orders.Core.Repositories;
 
 namespace Orders.Infrastructure.Persistence.Repositories
 {
@@ -6,5 +8,8 @@ namespace Orders.Infrastructure.Persistence.Repositories
     {
         private readonly OrderDbContext _context = context;
         public IUnitOfWork UnitOfWork => _context;
+
+        public async Task<Voucher?> GetVoucherByCodeAsync(string code) => 
+            await _context.Vouchers.AsNoTracking().FirstOrDefaultAsync(x => x.Code == code);
     }
 }
