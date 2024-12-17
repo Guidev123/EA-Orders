@@ -2,6 +2,8 @@
 using EA.CommonLib.MessageBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Orders.Application.Services.Interfaces;
+using Orders.Application.UseCases;
 
 namespace Orders.Application
 {
@@ -14,8 +16,10 @@ namespace Orders.Application
         }
         public static void RegisterMediator(this IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(ApplicationModule).Assembly));
             services.AddScoped<IMediatorHandler, MediatorHandler>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         public static void AddMessageBusConfiguration(this IServiceCollection services, IConfiguration configuration)

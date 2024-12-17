@@ -27,6 +27,7 @@ namespace Orders.Application.Commands.CreateOrder
         public decimal Discount { get; private set; }
         public AddressDTO Address { get; private set; }
 
+        public void SetCustomerId(Guid customerId) => CustomerId = customerId;
         public override bool IsValid()
         {
             ValidationResult = new CreateOrderValidator().Validate(this);

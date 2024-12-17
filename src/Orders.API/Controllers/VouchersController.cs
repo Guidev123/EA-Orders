@@ -13,7 +13,7 @@ namespace Orders.API.Controllers
     {
         private readonly IMediatorHandler _mediator = mediator;
 
-        [HttpGet("{code}")]
+        [HttpGet("/{code}")]
         [ProducesResponseType(typeof(Response<VoucherDTO>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IResult> GetByCodeAsync(string code) =>
