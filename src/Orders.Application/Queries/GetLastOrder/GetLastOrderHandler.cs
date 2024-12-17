@@ -11,7 +11,7 @@ namespace Orders.Application.Queries.GetLastOrder
     {
         public async Task<Response<OrderDTO>> Handle(GetLastOrderQuery request, CancellationToken cancellationToken)
         {
-
+            return new(null);
         }
     }
 }

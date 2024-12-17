@@ -8,7 +8,7 @@ namespace Orders.API.Configurations
         public static void ApplyApiConfigurations(this WebApplicationBuilder builder)
         {
             builder.Services.AddInfra(builder.Configuration);
-            builder.Services.AddApplication();
+            builder.Services.AddApplication(builder.Configuration);
         }
     }
 }
