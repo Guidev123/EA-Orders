@@ -5,7 +5,7 @@ namespace Orders.Application.Commands.CreateOrder
 {
     public class CreateOrderCommand : Command<CreateOrderCommand>
     {
-        public CreateOrderCommand(Guid customerId, decimal totalPrice,
+        public CreateOrderCommand(string customerId, decimal totalPrice,
                                   List<OrderItemDTO> orderItems, string voucherCode,
                                   bool voucherIsUsed, decimal discount, AddressDTO address)
         {
@@ -19,7 +19,7 @@ namespace Orders.Application.Commands.CreateOrder
             Address = address;
         }
 
-        public Guid CustomerId { get; private set; }
+        public string CustomerId { get; private set; }
         public decimal TotalPrice { get; private set; }
         public List<OrderItemDTO> OrderItems { get; private set; }
         public string VoucherCode { get; private set; }
@@ -27,7 +27,7 @@ namespace Orders.Application.Commands.CreateOrder
         public decimal Discount { get; private set; }
         public AddressDTO Address { get; private set; }
 
-        public void SetCustomerId(Guid customerId) => CustomerId = customerId;
+        public void SetCustomerId(string customerId) => CustomerId = customerId;
         public override bool IsValid()
         {
             ValidationResult = new CreateOrderValidator().Validate(this);

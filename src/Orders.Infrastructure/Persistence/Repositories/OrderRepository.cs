@@ -12,7 +12,7 @@ namespace Orders.Infrastructure.Persistence.Repositories
         public async Task CreateAsync(Order order) => await _context.AddAsync(order);
         public void UpdateAsync(Order order) => _context.Update(order);
 
-        public async Task<List<Order>?> GetAllAsync(int pageNumber, int pageSize, Guid customerId) =>
+        public async Task<List<Order>?> GetAllAsync(int pageNumber, int pageSize, string customerId) =>
             await _context.Orders.Include(x => x.OrderItems).AsNoTracking()
             .Where(x => x.CustomerId == customerId).OrderBy(x => x.CreatedAt)
             .Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();

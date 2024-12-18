@@ -17,10 +17,9 @@ namespace Orders.Application
         }
         public static void RegisterMediator(this IServiceCollection services)
         {
-            services.AddHttpContextAccessor();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(ApplicationModule).Assembly));
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserUseCase, UserUseCase>();
         }
 
         public static void AddMessageBusConfiguration(this IServiceCollection services, IConfiguration configuration)
