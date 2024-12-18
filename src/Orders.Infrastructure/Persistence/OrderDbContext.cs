@@ -1,9 +1,9 @@
-﻿using EA.CommonLib.Mediator;
-using EA.CommonLib.Messages;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Orders.Core.Entities;
 using Orders.Core.Repositories;
 using Orders.Infrastructure.Persistence.Extensions;
+using SharedLib.Domain.Mediator;
+using SharedLib.Domain.Messages;
 
 namespace Orders.Infrastructure.Persistence
 {

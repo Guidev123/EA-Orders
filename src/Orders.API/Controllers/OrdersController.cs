@@ -1,8 +1,7 @@
-﻿using EA.CommonLib.Controllers;
-using EA.CommonLib.Mediator;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Orders.Application.Commands.CreateOrder;
 using Orders.Application.Services.Interfaces;
+using SharedLib.Domain.Mediator;
 
 namespace Orders.API.Controllers
 {

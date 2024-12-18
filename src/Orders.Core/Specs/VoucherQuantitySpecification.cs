@@ -1,5 +1,5 @@
-﻿using EA.CommonLib.Specs;
-using Orders.Core.Entities;
+﻿using Orders.Core.Entities;
+using SharedLib.Domain.Specifications;
 using System.Linq.Expressions;
 
 namespace Orders.Core.Specs

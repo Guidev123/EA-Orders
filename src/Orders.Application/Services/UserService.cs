@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Orders.Application.Services.Interfaces;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace Orders.Application.UseCases

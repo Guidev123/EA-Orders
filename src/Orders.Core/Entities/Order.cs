@@ -1,6 +1,6 @@
-﻿using EA.CommonLib.DomainObjects;
-using Orders.Core.Enums;
+﻿using Orders.Core.Enums;
 using Orders.Core.ValueObjects;
+using SharedLib.Domain.DomainObjects;
 
 namespace Orders.Core.Entities
 {

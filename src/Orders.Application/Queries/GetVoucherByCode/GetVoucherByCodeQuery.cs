@@ -1,6 +1,5 @@
-﻿using EA.CommonLib.Messages;
-using Orders.Application.DTOs;
-using System.Collections.Generic;
+﻿using Orders.Application.DTOs;
+using SharedLib.Domain.Messages;
 
 namespace Orders.Application.Queries.GetVoucherByCode
 {

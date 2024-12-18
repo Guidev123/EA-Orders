@@ -1,8 +1,8 @@
-﻿using EA.CommonLib.Responses;
-using MediatR;
+﻿using MediatR;
 using Orders.Application.DTOs;
 using Orders.Application.Mappers;
 using Orders.Core.Repositories;
+using SharedLib.Domain.Responses;
 
 namespace Orders.Application.Queries.GetVoucherByCode
 {

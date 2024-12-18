@@ -1,13 +1,11 @@
-﻿using EA.CommonLib.Messages;
-using EA.CommonLib.Responses;
-using MediatR;
-using Orders.Application.Commands.CreateOrder;
+﻿using MediatR;
 using Orders.Application.Events;
 using Orders.Application.Mappers;
 using Orders.Core.Entities;
 using Orders.Core.Repositories;
-using Orders.Core.Specs;
 using Orders.Core.Specs.Validators;
+using SharedLib.Domain.Messages;
+using SharedLib.Domain.Responses;
 
 namespace Orders.Application.Commands.CreateOrder
 {

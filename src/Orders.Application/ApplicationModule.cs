@@ -1,9 +1,10 @@
-﻿using EA.CommonLib.Mediator;
-using EA.CommonLib.MessageBus;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Orders.Application.Services.Interfaces;
 using Orders.Application.UseCases;
+using SharedLib.Domain.Mediator;
+using SharedLib.MessageBus;
 
 namespace Orders.Application
 {

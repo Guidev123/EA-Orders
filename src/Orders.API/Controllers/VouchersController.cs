@@ -1,9 +1,8 @@
-﻿using EA.CommonLib.Controllers;
-using EA.CommonLib.Mediator;
-using EA.CommonLib.Responses;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Orders.Application.DTOs;
 using Orders.Application.Queries.GetVoucherByCode;
+using SharedLib.Domain.Mediator;
+using SharedLib.Domain.Responses;
 using System.Net;
 
 namespace Orders.API.Controllers

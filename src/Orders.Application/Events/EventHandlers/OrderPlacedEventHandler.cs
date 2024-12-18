@@ -1,6 +1,6 @@
-﻿using EA.CommonLib.MessageBus;
-using EA.CommonLib.MessageBus.Integration.OrderPlaced;
-using MediatR;
+﻿using MediatR;
+using SharedLib.Domain.Messages.Integration.OrderPlaced;
+using SharedLib.MessageBus;
 
 namespace Orders.Application.Events.EventHandlers
 {

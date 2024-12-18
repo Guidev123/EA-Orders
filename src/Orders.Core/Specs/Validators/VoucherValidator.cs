@@ -1,5 +1,5 @@
-﻿using EA.CommonLib.Specs.Validation;
-using Orders.Core.Entities;
+﻿using Orders.Core.Entities;
+using SharedLib.Domain.Specifications.Validations;
 
 namespace Orders.Core.Specs.Validators
 {

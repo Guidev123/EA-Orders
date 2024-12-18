@@ -1,7 +1,7 @@
-﻿using EA.CommonLib.Messages;
-using EA.CommonLib.Responses;
-using MediatR;
+﻿using MediatR;
 using Orders.Application.DTOs;
+using SharedLib.Domain.Messages;
+using SharedLib.Domain.Responses;
 
 namespace Orders.Application.Queries.GetLastOrder
 {
