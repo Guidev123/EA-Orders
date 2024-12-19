@@ -4,7 +4,7 @@
 
 # Orders API
 
-This is the core service of my application, responsible for managing orders. The service was developed using Event-Driven Architecture (EDA) and follows the principles of Clean Architecture, CQRS, SOLID, and Domain-Driven Design (DDD). It interacts with the Cart API by publishing events using the Publish/Subscribe pattern, leveraging the `SharedLib.MessageBus` library.
+This is the core service of my application, responsible for managing orders. The service was developed using Event-Driven Architecture (EDA) and follows the principles of Clean Architecture, CQRS, SOLID, and Domain-Driven Design (DDD). It interacts with the Cart API by publishing events using the Publish/Subscribe pattern, leveraging the [`SharedLib.MessageBus`](https://github.com/Guidev123/EA-SharedLib) library.
 
 ## Architecture
 
